@@ -1,11 +1,23 @@
 package com.shamanoff.news_parser.model;
 
+import org.springframework.data.annotation.Id;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
 import java.util.Objects;
 
+@Entity(name = "news")
 public class News {
 
-    private String link;
+    @Id
+    @Column(name = "id")
+    private Integer id;
+
+    @Column(name = "title")
     private String title;
+
+    @Column(name = "link")
+    private String link;
 
     public News(String link, String title) {
         this.link = link;
